@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import com.lesslsmore.music.common.result.Result;
@@ -39,11 +41,12 @@ public class ScanController {
 
     @PostMapping("/path/{*path}")
     public Result setPath(@PathVariable String path) {
-        String p = path.substring(1);
+        String ps = path.substring(1);
+        Path p = Paths.get(ps);
         Fold fold = Fold.builder()
-                .path(p)
-                .fold("/")
-                .file(p)
+                .path(p.toString().replace('\\','/'))
+                .fold(p.getParent().toString().replace('\\','/'))
+                .file(p.getFileName().toString())
                 .id(0)
                 .build();
         log.info("fold = {}", fold);

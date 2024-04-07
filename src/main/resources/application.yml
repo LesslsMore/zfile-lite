@@ -11,8 +11,8 @@ mybatis-plus:
       id-type: auto
 music:
   base_path: E:/T/Music/
-  scan_path: E:/T/Music/2-Japanese/白色相簿
-  base_url: http://localhost:8088/music
+#  scan_path: E:/T/Music/2-Japanese/白色相簿
+#  base_url: http://localhost:8088/music
   map_url: /music/**
 
 #spring:

@@ -33,7 +33,7 @@ public class ScanService {
                     .build();
             try {
                 Utils.get_meta_by_id3(song);
-                String url = conf.base_url + '/' + Paths.get(conf.base_path).relativize(Paths.get(song.getPath())).toString().replace('\\','/');
+                String url = '/' + Paths.get(conf.base_path).relativize(Paths.get(song.getPath())).toString().replace('\\','/');
                 log.info("url test {}", url);
                 song.setUrl(url);
                 songs.add(song);

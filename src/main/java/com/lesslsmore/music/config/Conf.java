@@ -19,11 +19,11 @@ import org.springframework.stereotype.Component;
 public class Conf {
     @Value("${music.base_path}")
     public String base_path;
-    @Value("${music.scan_path}")
-    public String scan_path;
+//    @Value("${music.scan_path}")
+//    public String scan_path;
     @Value("${music.map_url}")
     public String map_url;
-    @Value("${music.base_url}")
-    public String base_url;
+//    @Value("${music.base_url}")
+//    public String base_url;
 
 }
